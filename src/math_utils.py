@@ -1,6 +1,6 @@
 # Simple function 1
 def add(a, b):
-    return a + b
+    return a - b
 
 # Simple function 2
 def multiply(a, b):
