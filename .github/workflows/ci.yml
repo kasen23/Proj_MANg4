@@ -1,6 +1,5 @@
 name: CI Pipeline
 
-# Run pipeline on every push
 on: [push]
 
 jobs:
@@ -8,20 +7,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout repo code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
-      # Step 3: Install dependencies
       - name: Install pytest
         run: pip install pytest
 
-      # Step 4: Run tests (unit + integration)
       - name: Run tests
-        run: pytest
+        run: python -m pytest
